@@ -29,6 +29,10 @@ function setup() {
   bow = createSprite(380,220,20,50);
   bow.addImage(bowImage); 
   bow.scale = 1;
+  //create wall
+  wall = createSprite(400,200,5,400)
+  wall.visible = false;
+  
   
    score = 0   
    redb = new Group();
