@@ -2,7 +2,6 @@ var bow , arrow,  scene;
 var bowImage, arrowImage, green_balloonImage, red_balloonImage, pink_balloonImage ,blue_balloonImage, backgroundImage;
 var score=0;
 var green,red,pink,blue;
-var wall;
 function preload(){
   
   backgroundImage = loadImage("background0.png");
@@ -29,9 +28,6 @@ function setup() {
   bow = createSprite(380,220,20,50);
   bow.addImage(bowImage); 
   bow.scale = 1;
-  //create wall
-  wall = createSprite(400,200,5,400)
-  wall.visible = false;
   
   
    score = 0   
@@ -74,24 +70,6 @@ function draw() {
       pinkBalloon();
     }
   }  
- //if touch the wall
-if(greenb.isTouching(wall)){
-   greenb.destroyEach();
-   score=score-1
-  }
-
-  if(blueb.isTouching(wall)){
-    blueb.destroyEach();
-    score=score-1
-  }
-  if(redb.isTouching(wall)){
-    redb.destroyEach();
-    score=score-1
-  }
-if(pinkb.isTouching(wall)){
-  pinkb.destroyEach();
-  score=score-1
-}
 
   
   drawSprites();
